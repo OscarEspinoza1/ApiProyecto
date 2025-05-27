@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 // Configuración de PostgreSQL
 const pool = new Pool({
-  user: process.env.DB_USER || 'foodchainuser',
+  user: process.env.DB_USER || 'foodchainsuser',
   host: process.env.DB_HOST || 'dpg-d0qgi0buibrs73ejekc0-a.ohio-postgres.render.com',
   database: process.env.DB_NAME || 'food_chains',
   password: process.env.DB_PASS || 'mKWJnwEei5hGpwL1k0dMSnsNsqwUUJBy',
