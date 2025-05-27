@@ -5,6 +5,8 @@ const { Pool } = require('pg');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJSDoc = require('swagger-jsdoc');
 require('dotenv').config();
+const path = require('path');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -25,6 +27,8 @@ const pool = new Pool({
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
     res.redirect('/api-docs'); // Redirige a Swagger UI
