@@ -30,7 +30,7 @@ const swaggerDefinition = {
         version: '1.0.0',
         description: 'Documentación Swagger para Cadenas de Comida',
     },
-    servers: [{ url: `http://localhost:${PORT}` }],
+    servers: [{ url: `https://apiproyecto-apfi.onrender.com` }],
 };
 const options = {
     swaggerDefinition,
