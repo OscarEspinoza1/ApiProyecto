@@ -16,11 +16,19 @@ const pool = new Pool({
   database: process.env.DB_NAME || 'food_chains',
   password: process.env.DB_PASS || 'mKWJnwEei5hGpwL1k0dMSnsNsqwUUJBy',
   port: process.env.PG_PORT || 5432,
+  dburl: process.env.DB_URL || 'postgresql://foodchainsuser:mKWJnwEei5hGpwL1k0dMSnsNsqwUUJBy@dpg-d0qgi0buibrs73ejekc0-a.ohio-postgres.render.com/food_chains',
+  ssl: {
+    rejectUnauthorized: false 
+  }
 });
 
 // Middlewares
 app.use(cors());
 app.use(bodyParser.json());
+
+app.get('/', (req, res) => {
+    res.redirect('/api-docs'); // Redirige a Swagger UI
+  });
 
 // Swagger configuración
 const swaggerDefinition = {
